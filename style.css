@@ -1,0 +1,105 @@
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.navbar {
+  float: right;}
+
+li.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  background-color: #444444;
+  color: white;
+  text-decoration: none; /* Remove underline */
+  transition: transform 0.3s, background-color 0.3s;
+  margin-right: 10px; /* Add margin to create space between buttons */
+  margin-top: 5px; /* Add margin-top to move the buttons down */
+}
+
+li.navbar a:hover {
+  background-color: #111;
+  transform: scale(1.1);
+  background-color: rgb(179, 0, 0);
+  color: white;
+  text-decoration: none; /* Remove underline on hover */
+}
+
+body {
+font-family: Arial, sans-serif;
+font-size: 16px;
+background-color: #474747;
+}
+
+h1 {
+  font-family: Verdana, sans-serif;
+  font-size: 24px;
+}
+
+.top-bar {
+  background-color: #333;
+  padding: 10px;
+}
+
+.logo {
+  float: left;
+  height: 50px;
+  width: 150px;
+  margin-right: 10px;
+}
+
+.button-container {
+  float: right;
+}
+
+.top-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.top-button:hover {
+  background-color: #45a049;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(31, 31, 31);
+  color: white; /* Optional: Set text color to white for better visibility on a black background */
+}
+
+.preview {
+  width: 35vw;
+  height: 35vw;
+  position: relative;
+  top: -50vh;
+  left: 55vw;
+  height: auto;
+ transform: perspective(200px) rotate3D(0, 1, 0, -4deg);
+}
+
+.description {
+  width: 45vw;
+  height: 45vw;
+  position: relative;
+  top: 20vh;
+  left: 10vw;
+  height: auto;
+ transform: perspective(200px) rotate3D(0, 1, 0, 4deg);
+}

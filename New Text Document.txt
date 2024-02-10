@@ -1,0 +1,21 @@
+
+  
+    In late March 2020, as the world grappled with the onset of the COVID-19 pandemic, 
+    I embarked on a journey into the world of coding. The confines of being stuck indoors left me yearning for a meaningful pastime, 
+    a hobby to channel my energy and curiosity. It was during this period of isolation that I discovered the enchanting realm of coding. 
+    
+    Starting with simple languages like Batch and Shell, I fueled my insatiable desire to create and innovate with each passing day. 
+    As I honed my skills, I found myself becoming more proficient and discovering ways to optimize my workflow, 
+    ensuring that every line of code I wrote was a testament to my continuous growth and improvement.
+    
+    As an ardent enthusiast of coding, I find immense joy in dissecting scripts and compiled code,
+    exploring their inner workings akin to dismantling a car or an antique clock to unveil the secrets of their intricate mechanisms.
+    
+    Coding has become my passion, and crafting tools that surpass the accomplishments of their predecessors within my tool family 
+    brings me a profound sense of relaxation and relief from stress. Throughout my journey as a coder,
+    I have been fortunate to forge meaningful connections with fellow enthusiasts. Among them,
+    
+    I am grateful for the enduring friendship of DeadtrosGaming, a companion who has shared countless coding endeavors, 
+    and SalL6350, a remarkable friend who provided invaluable assistance in shaping the foundations of my projects from the ground up. 
+    These collaborations have not only enriched my coding experience but have also fueled my drive to continually push the 
+    boundaries of what is possible in the world of technology.
