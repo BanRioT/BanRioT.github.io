@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="iplookup.js"></script>
+</head>
+<body class="container">
+  <style>
+
+.white {
+  color: #ffffff;
+}
+
+.pink {
+  color: #e137ff;
+}
+
+.green {
+  color: #37FF8B;
+}
+
+  </style>
+  <!-- Your HTML content goes here -->
+<body style="background-color: #212121;">
+
+<div class="button-container2">
+    <button id="button1" class="button" onclick="window.location.href='index.html'">
+        <span class="actual-text">&nbsp;Home&nbsp;</span>
+        <span aria-hidden="true" class="hover-text">&nbsp;Home&nbsp;</span>
+    </button>
+
+    <button id="button2" class="button" onclick="window.location.href='about.html'">
+        <span class="actual-text">&nbsp;About&nbsp;</span>
+        <span aria-hidden="true" class="hover-text">&nbsp;About&nbsp;</span>
+    </button>
+
+    <button id="button3" class="button" onclick="window.location.href='sec.html'">
+      <span class="actual-text">&nbsp;Tools&nbsp;</span>
+      <span aria-hidden="true" class="hover-text">&nbsp;Tools&nbsp;</span>
+  </button>
+
+    <button id="button4" class="button" onclick="window.location.href='tools.html'">
+      <span class="actual-text">&nbsp;Downloads&nbsp;</span>
+      <span aria-hidden="true" class="hover-text">&nbsp;Downloads&nbsp;</span>
+  </button>
+
+
+<h1 id="logo" class="glowing-text">Ban RioT</h1>
+
+<!-- <button class="special-button">Click me</button> -->
+
+<div id="iplookup" class="widget-container">
+  <div class="widget-toolbar">
+    <p class="widget-user"><span class="white">IP Lookup Tool</span></p>
+    <div class="widget-add-tab">X</div>
+  </div>
+  <div class="widget-body">
+    <div class="widget-prompt">
+      <span class="widget-user"><span class="white">User</span><span class="pink">@</span><span class="greenD">Lookup</span>:</span>
+      <span class="widget-location">~</span>
+      <span class="widget-bling">$</span>
+      <span class="widget-cursor"></span>
+    </div>
+    <div class="widget-output">
+      <pre class="output-text"></pre>
+    </div>
+    <div class="terminal-input">
+      <input placeholder="Enter target." class="input-text" type="text" />
+    </div>
+  </div>
+</div>
+
+</body>
+</body>
+</html>
