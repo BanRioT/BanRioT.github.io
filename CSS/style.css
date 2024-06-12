@@ -623,10 +623,11 @@ button.primary.ghost {
     transition: transform 300ms ease;
     z-index: 5;
   }
-  
-  .notification:hover .notibody {
-    transform: translateX(0.25rem)
+
+  .notification3:hover .notibody {
+    transform: translateX(0.25rem);
   }
+
   
   .notiglow,
   .notiborderglow {
