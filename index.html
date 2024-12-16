@@ -1,129 +1,886 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Ban RioT</title>
-  <link rel="icon" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban RioTs website</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Silkscreen:wght@400;700&display=swap');
+
+body {
+    overflow: auto; /* Keep scrolling enabled */
+}
+body::-webkit-scrollbar {
+    display: none; /* Hide scrollbars visually */
+}
+
+.top-center-text {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 24px; /* Adjust size as needed */
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add depth to the text */
+    z-index: 1000; /* Ensure it appears above other elements */
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0); /* Optional background for contrast */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.bottom-center-copyright {
+    position: absolute;
+    top: 830px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 14px; /* Adjust size as needed */
+    color: rgb(81, 81, 81);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add depth to the text */
+    z-index: 1000; /* Ensure it appears above other elements */
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0); /* Optional background for contrast */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.bottom-center-microsoft-logo {
+    position: absolute;
+    top: 855px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 14px; /* Adjust size as needed */
+    color: rgb(81, 81, 81);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add depth to the text */
+    z-index: 1000; /* Ensure it appears above other elements */
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0); /* Optional background for contrast */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.top-center-description {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 20px; /* Adjust size as needed */
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add depth to the text */
+    z-index: 1000; /* Ensure it appears above other elements */
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0); /* Optional background for contrast */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: white; /* Text color */
+    background: linear-gradient(180deg, #444, #222); /* Gradient background */
+    border: 1px solid #000; /* Subtle border */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.2), 0 3px 6px rgba(0, 0, 0, 0.5); /* 3D look */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .button:hover {
+    color: #FFFFFF; /* Aqua text color */
+  }
+  
+  .button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #2391ff, transparent); /* Aqua gradient underline */
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  
+  .button:hover:after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .button .stripe {
+    position: absolute;
+    bottom: 8px; /* Distance from the bottom */
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffffff, #ffffff); /* Aqua gradient strip */
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .button:hover .stripe {
+    opacity: 1; /* Fade in the stripe on hover */
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+    overflow: hidden; /* Prevent scroll during loading */
+}
+
+.tab-container {
+    display: none;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.0);
+    color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tab-container.active {
+    display: block;
+}
+
+.dropdown-menu button.active {
+    background-color: #333;
+}
+
+/* Loading Animation */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.progress-loader {
+    width: 150px;
+    background: rgba(236, 236, 238, 0.253);
+    height: 3px;
+    border-radius: 7px;
+}
+
+.progress {
+    content: '';
+    width: 1px;
+    height: 3px;
+    border-radius: 7px;
+    background: rgb(255, 255, 255);
+    animation: loading1274 2s ease infinite;
+}
+
+@keyframes loading1274 {
+    0% { width: 0%; }
+    10% { width: 10%; }
+    50% { width: 40%; }
+    60% { width: 60%; }
+    100% { width: 100%; }
+}
+
+/* Full-screen background video */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 90%;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    transition: top 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+}
+
+.dropdown-menu.visible {
+    top: 10px;
+    opacity: 1;
+}
+
+.dropdown-menu button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+}
+
+.dropdown-menu button:hover {
+    background-color: #555;
+}
+
+/* Personal description widget */
+.description-widget {
+    position: fixed;
+    left: 280px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.description-widget p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Announcements widget */
+.announcements-widget {
+    position: fixed;
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    max-height: 400px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    overflow-y: auto;
+}
+
+.announcements-widget::-webkit-scrollbar {
+    width: 10px;
+}
+
+.announcements-widget::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+}
+
+.announcements-widget::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Glass Effect Table */
+.glass-table-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Glass-like effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-x: auto; /* For horizontal scrolling */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+td {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+td a {
+    color: #58a6ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+td a:hover {
+    color: #7dcdff; /* Hover effect for links */
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .glass-table-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+
+.color-red {
+    color: #FF5555; /* Red */
+}
+
+.color-green {
+    color: #55FF55; /* Green */
+}
+
+.color-blue {
+    color: #5555FF; /* Blue */
+}
+
+.color-yellow {
+    color: #FFFF55; /* Yellow */
+}
+
+.color-aqua {
+    color: #55FFFF; /* Aqua */
+}
+
+.color-purple {
+    color: #AA00AA; /* Purple */
+}
+
+.color-darkgray {
+    color: #555555; /* Dark Gray */
+}
+
+.color-white {
+    color: white; /* White */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: white; /* Text color */
+    background: linear-gradient(180deg, #444, #222); /* Gradient background */
+    border: 1px solid #000; /* Subtle border */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.2), 0 3px 6px rgba(0, 0, 0, 0.5); /* 3D look */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    }
+    
+    .button:hover {
+    color: #FFFFFF; /* Aqua text color */
+    }
+    
+    .button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #2391ff, transparent); /* Aqua gradient underline */
+    transition: width 0.3s ease, left 0.3s ease;
+    }
+    
+    .button:hover:after {
+    width: 100%;
+    left: 0;
+    }
+    
+    .button .stripe {
+    position: absolute;
+    bottom: 8px; /* Distance from the bottom */
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffffff, #ffffff); /* Aqua gradient strip */
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    }
+    
+    .button:hover .stripe {
+    opacity: 1; /* Fade in the stripe on hover */
+    }
+    
+
+    .footer {
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: gray;
+    }
+
+    .hidden-link {
+        color: inherit; /* Matches the surrounding text color */
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .hidden-link:hover {
+        color: rgb(101, 101, 101);
+    }
+
+    .tos-container-widget {
+        position: fixed;
+        font-family: "Chakra Petch", sans-serif;
+        left: 50%; /* Centers horizontally */
+        top: 50%; /* Centers vertically */
+        transform: translate(-50%, -50%); /* Ensures proper centering */
+        width: 90%;
+        height: 150%;
+        word-wrap: break-word; /* Enable text wrapping for long words */
+        overflow-wrap: break-word; /* Ensures wrapping for compatibility */
+        line-height: 1.6; /* Adjust line height for readability */
+        max-width: 1200px; /* Set a maximum width */
+        max-height: 750px; /* Adjust this value to make the widget taller */
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        color: white;
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        overflow-y: auto; /* Enables vertical scrolling */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+    }
+    
+    /* Custom scrollbar styling */
+    .tos-container-widget::-webkit-scrollbar {
+        width: 8px; /* Adjust the width of the scrollbar */
+    }
+    
+    .tos-container-widget::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1); /* Matches the widget background */
+        border-radius: 10px; /* Rounded corners for smooth design */
+    }
+    
+    .tos-container-widget::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3); /* Light and semi-transparent */
+        border-radius: 10px; /* Matches the border radius of the widget */
+        border: 2px solid rgba(255, 255, 255, 0.1); /* Adds a subtle border */
+    }
+    
+    .tos-container-widget::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5); /* Slightly brighter on hover */
+    }
+
+/* Glass-like modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Ensures proper centering */
+    width: 250px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Glass effect */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    z-index: 1000; /* Make sure it appears above other content */
+}
+
+/* Show the modal with animation */
+.modal.show {
+    transform: translateY(-50%); /* Center vertically */
+    opacity: 1; /* Fade in */
+}
+
+/* Modal content */
+.modal-content {
+    text-align: center;
+}
+
+/* Modal buttons */
+.modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.modal-content button:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+}
+
+.modal-content button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.modal-content a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+</style>
 </head>
-<body class="container">
-  <!-- Your HTML content goes here -->
-<body style="background-color: #212121;">
+<body>
 
-<div class="button-container2">
-    <button id="button1" class="button" onclick="window.location.href='index.html'">
-        <span class="actual-text">&nbsp;Home&nbsp;</span>
-        <span aria-hidden="true" class="hover-text">&nbsp;Home&nbsp;</span>
-    </button>
-
-    <button id="button2" class="button" onclick="window.location.href='about.html'">
-        <span class="actual-text">&nbsp;About&nbsp;</span>
-        <span aria-hidden="true" class="hover-text">&nbsp;About&nbsp;</span>
-    </button>
-
-    <button id="button3" class="button" onclick="window.location.href='sec.html'">
-        <span class="actual-text">&nbsp;Tools&nbsp;</span>
-        <span aria-hidden="true" class="hover-text">&nbsp;Tools&nbsp;</span>
-    </button>
-
-    <button id="button4" class="button" onclick="window.location.href='tools.html'">
-        <span class="actual-text">&nbsp;Downloads&nbsp;</span>
-        <span aria-hidden="true" class="hover-text">&nbsp;Downloads&nbsp;</span>
-    </button>
-
-
-
-<div id="card1" class="card-container">
-    <span class="leader">Leader</span>
-    <img
-        class="round"
-        src="images/riot.png"
-        alt="user"
-    />
-    <h3>Ban RioT</h3>
-    <h6>Working on: HTK</h6>
-    <p>
-        Leader of Motherless and lead<br>
-        developer and programmer.
-    </p>
-    <div class="skills">
-        <h6>Skills</h6>
-        <ul>
-            <li>Python 🐍</li>
-            <li>Hacking 🧪</li>
-            <li>Coding 📟</li>
-            <li>C# 🦺</li>
-        </ul>
+<!-- Loading Animation -->
+<div class="loading-container" id="loading">
+    <div class="progress-loader">
+        <div class="progress"></div>
     </div>
 </div>
 
-<div id="socialcard1"class="social-media-buttons">
-    <a href="https://github.com/BanRioT" class="social-media-button github">
-      <img src="images/github.png" alt="github">
-    </a>
-    <a href="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSgpxUj62Nuc_2WXHD7BkI3C2qK7VnEp3eyvf5tOx16uV67pjQPuzzX50DPSbTW1B13APKme1rtlZDwgJ75ZiP54xmzpdfUjGeU3Li4Jo1hSZB1GsG5fwvE8q_YyDZ924_tVzEjzd5KavI&usqp=CAc" class="social-media-button twitter">
-      <img src="images/twitter.png" alt="Twitter">
-    </a>
-    <a href="https://www.instagram.com/officialbanriot/" class="social-media-button instagram">
-      <img src="images/instagram.png" alt="Instagram">
-    </a>
-    <a href="https://www.youtube.com/channel/UCvCgFBuD44cFZ9204Iu1fWA" class="social-media-button youtube">
-      <img src="images/youtube.png" alt="LinkedIn">
-    </a>
-  </div>
+<video class="background-video" autoplay muted loop>
+    <source src="assets/videos/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
-<div id="card2" class="card-container">
-    <span class="trainee">trainee</span>
-    <img
-        class="round"
-        src="images/herik.png"
-        alt="user"
-    />
-    <h3>Herik</h3>
-    <h6>Working on: HTK</h6>
-    <p>
-        developer and programmer.<br>
 
-    </p>
-    <div class="skills">
-        <h6>Skills</h6>
-        <ul>
-            <li>Python 🐍</li>
-            <li>Coding 📟</li>
-        </ul>
+
+<!-- Dropdown menu -->
+<div class="dropdown-menu" id="dropdownMenu">
+    <button class="button" onclick="openTab(event, 'home')">Home</button>
+    <button class="button" onclick="openTab(event, 'mcbe-addons')">MCBE Addons</button>
+    <button class="button" onclick="openTab(event, 'python-scripts')">Python Scripts</button>
+    <button class="button" onclick="openTab(event, 'tools')">Tools</button>
+</div>
+
+
+
+<!-- Terms of Service Modal -->
+<div id="tosModal" class="modal">
+    <div class="modal-content">
+        <h2>Terms of Service</h2>
+        <p>By checking this box, you agree to the <span class="hidden-link" onclick="openTab(event, 'tos')">Terms of Service</span>.</p>
+        <input type="checkbox" id="agreeCheckbox"> I agree to the Terms of Service
+        <br><br>
+        <button id="downloadButton" disabled class="button">Download</button>
+        <button id="cancelButton" class="button">Cancel</button>
     </div>
 </div>
 
-<div id="card3" class="card-container">
-    <span class="suspended">Suspended ⚠</span>
-    <img
-        class="round"
-        src="images/zi8rt.png"
-        alt="user"
-    />
-    <h3>Zi8rt</h3>
-    <h6>Working on: Currently Suspended</h6>
-    <p>
-        developer and programmer.<br>
 
-    </p>
-    <div class="skills">
-        <h6>Skills</h6>
-        <ul>
-            <li>Coding 📟</li>
-        </ul>
+
+<!-- Tab Content -->
+<div id="home" class="tab-container active">
+
+    <div class="top-center-text">
+        Welcome to My Website
+    </div>
+    <div class="top-center-description">
+        Move your mouse cursor to the top of the page to see the buttons
+    </div>
+    <div class="bottom-center-copyright">
+        © 2024 BanRioT. All rights reserved. <span class="hidden-link" onclick="openTab(event, 'tos')">Terms of Service</span>
+    </div>
+    <div class="bottom-center-microsoft-logo">
+        © Microsoft windows logo. All rights reserved.
     </div>
 </div>
-<h1 id="logo" class="glowing-text">Ban RioT</h1>
 
-<div id="newsfeed" class="notification3">
-    <div class="notiglow"></div>
-    <div class="notiborderglow"></div>
-    <div class="notititle">News Feed</div>
-    <div class="notibody">
-        1.0.0 - 5/6/2024<br>
-    [+] Initial website release.</div>
-  </div>
 
-</body>
+
+<div id="tos" class="tab-container">
+    <div class="tos-container-widget">
+            <h1>Copyright & Terms of Service</h1>
+            
+            <p>
+                <span class="highlight">Copyright Notice:</span> 
+                &copy; 2024 Ban RioT. All rights reserved. This copyright applies to all assets, tools, textures, addons, scripts, programs,
+                and any other intellectual property (collectively referred to as "Content") created, developed, hosted, and distributed through this website, 
+                regardless of the date of publication (past, present, or future). 
+                Any unauthorized use, reproduction, distribution, or modification of this Content is strictly prohibited without prior written permission from Ban RioT.
+            </p>
+
+            <p>
+                Ban RioT retains exclusive ownership of all Content unless explicitly stated otherwise. This includes, but is not limited to: 
+            </p>
+            <ul>
+                <li>Custom-developed tools, scripts, and software programs.</li>
+                <li>Digital textures, designs, and graphical assets.</li>
+                <li>Plugins, addons, and downloadable modules.</li>
+                <li>Web-based applications and utilities.</li>
+                <li>Any documentation, guides, and tutorials provided on this website.</li>
+            </ul>
+
+            <p>
+                By accessing or using this website, you agree to adhere to these terms and acknowledge that all Content is protected under applicable 
+                international copyright laws, intellectual property laws, and related regulations.
+            </p>
+
+            <h2>Terms of Service:</h2>
+            <p>
+                The use of this website and its Content is subject to the following Terms of Service (ToS):
+            </p>
+
+            <ol>
+                <li><span class="highlight">Permitted Use:</span> Users are granted a limited, non-exclusive license to access and view the Content for personal, non-commercial purposes only.</li>
+                <li><span class="highlight">Prohibited Actions:</span> You may not copy, modify, distribute, sell, or lease any part of the Content without express written consent.</li>
+                <li><span class="highlight">Disclaimer:</span> Ban RioT does not guarantee that the Content is error-free or fit for any specific purpose. Use at your own risk.</li>
+                <li><span class="highlight">Termination of Use:</span> Violation of these terms may result in immediate termination of access to the website and its Content.</li>
+            </ol>
+
+            <h2>Third-Party Content:</h2>
+            <p>
+                Certain materials on this website may reference or integrate third-party assets. These are used under appropriate licensing and remain the property of their respective owners. 
+                Ban RioT is not responsible for any third-party content or external links.
+
+            </p>
+
+            <h2>Updates to These Terms:</h2>
+            <p>
+                Ban RioT reserves the right to update or modify this Copyright and ToS page at any time without prior notice. 
+                Continued use of this website signifies your acceptance of any changes.
+            </p>
+
+            <p>
+                For inquiries regarding copyright permissions or other concerns, please contact me at 
+                banriotv2 on discord.</p>
+
+            <h2><span class="color-red">Obey the Law:</span></h2>
+            <p>
+                This website provides tools for Ethical hacking like OSINT Tools (Open-Source Intelligence), Cybersecurity tools, Network Monitoring tools, IP lookup tools, Port scanner tools, Ethical Hacking Toolkits and multiple tools that have multiple purposes. 
+                By using these tools, you agree to comply with all applicable laws and regulations in your jurisdiction, including, but not limited to, data privacy and cybersecurity laws.
+            </p>
+            <p>
+                These tools are intended solely for ethical and lawful use. It is your responsibility to ensure that your activities are legal in the region or country where you operate. Unauthorized use of these tools to breach privacy, conduct unauthorized surveillance, or engage in other illicit activities is strictly prohibited.
+            </p>
+            <p>
+                The creator of this website and its tools do not condone or support the misuse of these tools for unlawful purposes. We are not liable for any actions taken by users in violation of applicable laws or regulations.
+            </p>
+            <p>
+                If you are unsure about the legality of a specific activity, consult a legal professional before using these tools. By proceeding, you agree that you are solely responsible for your actions and any consequences resulting from their use.
+            </p>
+    </div>
+</div>
+
+
+
+<div id="mcbe-addons" class="tab-container">
+    <div class="bottom-center-copyright">
+        © 2024 BanRioT. All rights reserved. <span class="hidden-link" onclick="openTab(event, 'tos')">Terms of Service</span>
+    </div>
+    <div class="bottom-center-microsoft-logo">
+        © Microsoft windows logo. All rights reserved.
+    </div>
+    <div class="glass-table-container">
+        <h2 style="text-align: center; color: white;">Minecraft Bedrock Addons</h2>
+        <table>
+            <thead><tr><th>File Name</th><th>File Size</th><th>Download Link</th></tr></thead>
+            <tbody>
+                <!--<tr><td>Patcher<span class="color-aqua">.zip</span></td><td>1.2 MB</td><td><a href="https://example.com/file1.zip" download>Download</a></td></tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div id="python-scripts" class="tab-container">
+    <div class="bottom-center-copyright">
+        © 2024 BanRioT. All rights reserved. <span class="hidden-link" onclick="openTab(event, 'tos')">Terms of Service</span>
+    </div>
+    <div class="bottom-center-microsoft-logo">
+        © Microsoft windows logo. All rights reserved.
+    </div>
+    <div class="glass-table-container">
+        <h2 style="text-align: center; color: white;">Python Tools</h2>
+        <table>
+            <thead><tr><th>File Name</th><th>File Size</th><th>Download Link</th></tr></thead>
+            <tbody>
+                <!--<tr><td>Patcher<span class="color-aqua">.zip</span></td><td>N/a MB</td><td><a href="/downloads/patcher.txt" data-download>Download</a></td></tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div id="tools" class="tab-container">
+    <div class="bottom-center-copyright">
+        © 2024 BanRioT. All rights reserved. <span class="hidden-link" onclick="openTab(event, 'tos')">Terms of Service</span>
+    </div>
+    <div class="bottom-center-microsoft-logo">
+        © Microsoft windows logo. All rights reserved.
+    </div>
+    <div class="glass-table-container">
+        <h2 style="text-align: center; color: white;">Other Tools</h2>
+        <table>
+            <thead><tr><th>File Name</th><th>File Size</th><th>Download Link</th></tr></thead>
+            <tbody>
+                <!--<tr><td>Patcher<span class="color-aqua">.zip</span></td><td>1.2 MB</td><td><a href="https://example.com/file1.zip" download>Download</a></td></tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+// Loading Animation
+window.addEventListener('load', () => {
+    document.getElementById('loading').style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+const dropdownMenu = document.getElementById('dropdownMenu');
+let isHoveringMenu = false;
+
+dropdownMenu.addEventListener('mouseenter', () => {
+    isHoveringMenu = true;
+});
+
+dropdownMenu.addEventListener('mouseleave', () => {
+    isHoveringMenu = false;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (event.clientY <= 50 || isHoveringMenu) {
+        dropdownMenu.classList.add('visible');
+    } else {
+        dropdownMenu.classList.remove('visible');
+    }
+});
+
+function openTab(event, tabName) {
+    const tabContainers = document.querySelectorAll('.tab-container');
+    const buttons = document.querySelectorAll('.dropdown-menu button');
+
+    tabContainers.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(button => button.classList.remove('active'));
+
+    document.getElementById(tabName).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
+
+// Load announcements from Announcements.log
+fetch('Announcements.log')
+    .then(response => response.text())
+    .then(data => {
+        const announcementsWidget = document.getElementById('announcements');
+        announcementsWidget.innerHTML += `<p>${data.replace(/\n/g, '<br>')}</p>`;
+    })
+    .catch(error => {
+        console.error('Error loading announcements:', error);
+    });
+
+// Load About Me content from About_me.log
+fetch('About_me.log')
+    .then(response => response.text())
+    .then(data => {
+        const aboutMeParagraph = document.getElementById('aboutMe');
+        aboutMeParagraph.textContent = data;
+    })
+    .catch(error => {
+        console.error('Error loading About Me content:', error);
+    });
+
+window.addEventListener('wheel', function(event) {
+    event.preventDefault();
+}, { passive: false });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("tosModal");
+    const agreeCheckbox = document.getElementById("agreeCheckbox");
+    const downloadButton = document.getElementById("downloadButton");
+    const cancelButton = document.getElementById("cancelButton");
+    let fileToDownload = "";
+
+    // Open the ToS modal
+    function openToSModal(fileName) {
+        fileToDownload = fileName;
+        modal.style.display = "block";
+        agreeCheckbox.checked = false;
+        downloadButton.disabled = true;
+    }
+
+    // Close the modal
+    function closeToSModal() {
+        modal.style.display = "none";
+    }
+
+    // Enable download button when checkbox is checked
+    agreeCheckbox.addEventListener("change", () => {
+        downloadButton.disabled = !agreeCheckbox.checked;
+    });
+
+    // Handle download action
+    downloadButton.addEventListener("click", () => {
+        closeToSModal();
+        const downloadLink = document.createElement('a');
+        downloadLink.href = fileToDownload; // Set the file URL
+        downloadLink.download = fileToDownload.split('/').pop(); // Use the file name from the URL
+        downloadLink.click(); // Programmatically trigger the download
+    });
+
+    // Handle cancel action
+    cancelButton.addEventListener("click", closeToSModal);
+
+    // Function to show the ToS popup and handle download
+    function showTermsOfServicePopup(event) {
+        event.preventDefault(); // Prevent default action (link redirection)
+        const fileName = event.target.getAttribute('href'); // Get the file to be downloaded
+        openToSModal(fileName);
+    }
+
+    // Add event listeners to download links
+    const downloadLinks = document.querySelectorAll('[data-download]');
+    downloadLinks.forEach(link => {
+        link.addEventListener('click', showTermsOfServicePopup);
+    });
+});
+
+</script>
+
 </body>
 </html>
